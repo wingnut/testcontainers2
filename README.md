@@ -1,7 +1,7 @@
 # testcontainers2
 Testing using Oracle XE in a testcontainer
 
-Clone repo and run the poc.OracleTest
+Git clone this repo and run the poc.OracleTest
 
 Now, the OracleTest will likely fail the first time since it will try to pull a HUUUGE Oracle pre-built image.
 
