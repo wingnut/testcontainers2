@@ -1,5 +1,7 @@
 package poc;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.testcontainers.containers.OracleContainer;
 import org.testcontainers.junit.jupiter.Container;
@@ -13,11 +15,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Testcontainers
-public class OracleTest {
+class OracleTest {
+
+    private static Logger LOG = LogManager.getLogger(OracleTest.class);
 
     static LocalDateTime start = LocalDateTime.now();
     static  {
-        System.out.println("Starting Oracle: " + start);
+        LOG.info("Starting Oracle");
     }
 
     // Will be shared between test methods
@@ -29,27 +33,27 @@ public class OracleTest {
     static void start() {
         assertTrue(oracle.isRunning());
         var stop = LocalDateTime.now();
-        System.out.println("Oracle started: " + stop);
-        System.out.println("Took: " + ChronoUnit.SECONDS.between(start, stop) + "s");
+        LOG.info("Oracle started");
+        LOG.info("Starting Oracle Took: " + ChronoUnit.SECONDS.between(start, stop) + "s");
     }
 
     @AfterAll
     static void stop() {
-        System.out.println("Finished: " + LocalDateTime.now());
+        LOG.info("Finished");
     }
 
     @BeforeEach
     void testStart() {
-        System.out.println("Starting test method: " + LocalDateTime.now());
+        LOG.info("Starting test method");
     }
 
     @AfterEach
     void testStop() {
-        System.out.println("Finished test method: " + LocalDateTime.now());
+        LOG.info("Finished test method");
     }
 
     @Test
-    public void testOracle() throws SQLException {
+    void testOracle() throws SQLException {
         // Open a connection and run a dummy query
         try(Connection conn = DriverManager.getConnection(oracle.getJdbcUrl(), "system", "oracle");
             ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM DUAL")) {
