@@ -1,4 +1,10 @@
 version: 2
+registries:
+  maven-github:
+    type: maven-repository
+    url: https://labs.travsport.se/nexus/repository/maven-public
+    username: dependabot
+    password: ${{secrets.NEXUS_DEPENDABOT_PWD}}
 updates:
   - package-ecosystem: "maven"
     directory: "/"
