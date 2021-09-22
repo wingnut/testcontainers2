@@ -1,6 +1,6 @@
 version: 2
 registries:
-  maven-github:
+  nexus:
     type: maven-repository
     url: https://labs.travsport.se/nexus/repository/maven-public
     username: dependabot
@@ -8,5 +8,7 @@ registries:
 updates:
   - package-ecosystem: "maven"
     directory: "/"
+    registries:
+      - nexus
     schedule:
       interval: "daily"
