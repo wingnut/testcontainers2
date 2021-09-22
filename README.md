@@ -9,6 +9,6 @@ So perhaps best to do a
 ```docker pull wingnut/oracle-database:18.4.0-xe-prebuilt```
 separately first.
 
-### NOTE
+### DEPRECATED
 This repo has been copied (complete with git history) to https://github.com/Troperty/oracle-testcontainers where the real work should continue.
 But feel free to fork this repo to continue to lab outside the Troperty realm.
