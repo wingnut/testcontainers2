@@ -36,6 +36,20 @@
             <version>2.14.1</version>
         </dependency>
 
+        <!-- START Labbing with dependabot -->
+        <dependency>
+            <groupId>it.unimi.dsi</groupId>
+            <artifactId>fastutil</artifactId>
+            <version>8.5.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1-jre</version>
+        </dependency>
+        <!-- END Labbing with dependabot -->
+
         <!-- Just here to trigger a dependabot security alert/PR -->
         <dependency>
             <groupId>org.jsoup</groupId>
