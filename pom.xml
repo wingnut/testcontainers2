@@ -48,6 +48,12 @@
             <artifactId>guava</artifactId>
             <version>30.1-jre</version>
         </dependency>
+             
+        <dependency>
+             <groupId>org.apache.commons</groupId>
+             <artifactId>commons-lang3</artifactId>
+             <version>3.10</version>
+         </dependency>
         <!-- END Labbing with dependabot -->
 
         <!-- Just here to trigger a dependabot security alert/PR -->
