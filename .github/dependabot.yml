@@ -12,6 +12,4 @@ updates:
       - nexus
     schedule:
       interval: "daily"
-    allow:
-      # Allow updates for Google but not it.unimi.dsi
-      - dependency-name: "com.google*"
+
